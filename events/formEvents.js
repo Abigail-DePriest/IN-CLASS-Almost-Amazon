@@ -14,8 +14,12 @@ const formEvents = () => {
     }
 
     // FIXME: ADD CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN AUTHOR
-    if (e.target.id.includes('submit-author')) {
+    document.querySelector('#main-container').addEventListener('submit', (e) => {
+      e.preventDefault();
+        if (e.target.id.includes('submit-author')) {
       console.warn('CLICKED SUBMIT AUTHOR');
+    }
+  
     }
     // FIXME:ADD CLICK EVENT FOR EDITING AN AUTHOR
   });
