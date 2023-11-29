@@ -17,16 +17,20 @@ const domEvents = () => {
         });
       }
     }
-
     // TODO: CLICK EVENT FOR SHOWING FORM FOR ADDING A BOOK
-    if (e.target.id.includes('add-book-btn')) {
-      addBookForm();
+   
+      if (e.target.id.includes('add-book-btn')) {
+        addBookForm();
+      }
     }
+
     // TODO: CLICK EVENT EDITING/UPDATING A BOOK
-    if (e.target.id.includes('edit-book-btn')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      getSingleBook(firebaseKey).then((bookObj) => addBookForm(bookObj));
-    }
+    
+      if (e.target.id.includes('edit-book-btn')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        getSingleBook(firebaseKey).then((bookObj) => addBookForm(bookObj));
+      }
+    
     // TODO: CLICK EVENT FOR VIEW BOOK DETAILS
     if (e.target.id.includes('view-book-btn')) {
       console.warn('VIEW BOOK', e.target.id);
@@ -44,11 +48,12 @@ const domEvents = () => {
         });
       }
     }
+
     // FIXME: ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
     if (e.target.id.includes('add-author-btn')) {
       console.warn('ADD AUTHOR');
     }
-  // FIXME: ADD CLICK EVENT FOR EDITING AN AUTHOR
+    // FIXME: ADD CLICK EVENT FOR EDITING AN AUTHOR
   });
 };
 
